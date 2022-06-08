@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -35,4 +36,16 @@ public class Technician {
     @OneToOne
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "technicianWork",
+            joinColumns = {@JoinColumn(name = "techician_id")},
+            inverseJoinColumns = {@JoinColumn(name = "word_id")}
+    )
+    private List<Work> works;
+
+    @OneToOne
+    @JoinColumn(name="vehicule_id", referencedColumnName = "id")
+    private Vehicule vehicule;
 }

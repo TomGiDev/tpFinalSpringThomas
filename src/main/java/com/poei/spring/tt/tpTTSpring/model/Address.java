@@ -27,4 +27,7 @@ public class Address {
     @Column(length = 255)
     private String city;
 
+    @OneToOne(mappedBy = "address")
+    private Technician technicians;
+
 }
