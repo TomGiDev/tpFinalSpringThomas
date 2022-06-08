@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  crm-db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=tt
+      - POSTGRES_PASSWORD=tt
+      - POSTGRES_DB=tt
+    ports:
+      - "5578:5432"
