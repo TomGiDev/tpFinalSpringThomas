@@ -2,6 +2,7 @@ package com.poei.spring.tt.tpTTSpring.mapper;
 
 
 import com.poei.spring.tt.tpTTSpring.api.dto.ManagerDto;
+import com.poei.spring.tt.tpTTSpring.api.dto.TechnicianDto;
 import com.poei.spring.tt.tpTTSpring.model.Manager;
 import com.poei.spring.tt.tpTTSpring.model.Technician;
 import org.mapstruct.Mapper;
@@ -27,8 +28,10 @@ public interface ManagerMapper {
                             technician.getLastname(),
                             technician.getFirstname(),
                             technician.getAge(),
-                            manager.getId(),
-                            technician.getAddress().getId()
+                            technician.getManager(),
+                            technician.getAddress(),
+                            technician.getWorks().stream().map(w -> w.getId()).toList(),
+                            technician.getVehicule()
 
                     ))
                     .toList();
