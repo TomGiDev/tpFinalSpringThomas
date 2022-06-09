@@ -52,7 +52,7 @@ public class TechnicianApi {
     @Operation(summary = "Create a technician")
     public ResponseEntity<TechnicianDto> createTechnician(@RequestBody TechnicianDto technicianDto) {
         TechnicianDto technicianCreated = technicianMapper.mapToDto(technicianService.createTechnician(technicianMapper.mapToModel(technicianDto)));
-        return ResponseEntity.created(URI.create("/v1/addresses/" + technicianCreated.getId()))
+        return ResponseEntity.created(URI.create("/v1/technician/" + technicianCreated.getId()))
                 .body(technicianCreated);
     }
 
