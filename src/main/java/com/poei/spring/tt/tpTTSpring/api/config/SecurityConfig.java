@@ -1,4 +1,4 @@
-/*package com.poei.spring.tt.tpTTSpring.api.config;
+package com.poei.spring.tt.tpTTSpring.api.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -40,14 +40,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
-        //création/modification sur "customers" réservé au statut ADMIN
-        //création sur "orders" réservé au statut ADMIN
-        //toute action nécessite authentification
+
         httpSecurity.httpBasic().and().authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/v1/customers/**").hasRole("ADMIN")
-                .antMatchers(HttpMethod.PUT, "/v1/customers/**").hasRole("ADMIN")
-                .antMatchers(HttpMethod.POST, "/v1/orders/**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.POST, "/v1/technician/**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.GET, "/v1/**").hasAnyRole("ADMIN","USER")
+                .antMatchers(HttpMethod.DELETE, "/v1/technician/**").hasRole("ADMIN")
                 .anyRequest().authenticated();
     }
 }
-*/
