@@ -12,7 +12,7 @@ public interface VehiculeService {
 
     Vehicule createVehicule(Vehicule vehicule);
 
-    void deleteVehicule(Vehicule vehicule);
+    void deleteVehicule(Integer id);
 
     Vehicule updateVehicule(Vehicule vehicule);
 }
