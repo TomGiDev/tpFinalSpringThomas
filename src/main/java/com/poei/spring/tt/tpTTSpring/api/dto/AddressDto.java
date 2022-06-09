@@ -16,5 +16,5 @@ public class AddressDto {
     private Integer streenumber;
     private String road;
     private String city;
-    private Technician technicians;
+    private Integer technicianId;
 }

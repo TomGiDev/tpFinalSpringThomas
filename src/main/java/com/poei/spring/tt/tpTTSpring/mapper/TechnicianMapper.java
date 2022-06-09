@@ -3,7 +3,9 @@ package com.poei.spring.tt.tpTTSpring.mapper;
 import com.poei.spring.tt.tpTTSpring.api.dto.TechnicianDto;
 import com.poei.spring.tt.tpTTSpring.api.dto.WorkDto;
 import com.poei.spring.tt.tpTTSpring.model.Technician;
+import com.poei.spring.tt.tpTTSpring.model.Work;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 import org.springframework.stereotype.Component;
 
@@ -14,20 +16,25 @@ import java.util.List;
 @Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface TechnicianMapper {
 
+    @Mapping(target = "works", expression = "java(getWorksId(technician))")
     TechnicianDto mapTechnicianToTechnicianDto(Technician technician);
 
+    @Mapping(target = "works", expression = "java(getWorks(technicianDto))")
     Technician mapTechnicianDtoToTechnician(TechnicianDto technicianDto);
 
-    default List<WorkDto> getWorks(Technician technician) {
+    default List<Integer> getWorksId(Technician technician) {
         if (technician.getWorks() != null) {
             return technician.getWorks().stream()
-                    .map(work -> new WorkDto(
-                            work.getId(),
-                            work.getWorkname(),
-                            work.getWorkprice(),
-                            work.getTechnicians().stream().map(tech -> tech.getId()).toList()
-                    ))
-                    .toList();
+                    .map(Work::getId).toList();
+        }
+        return new ArrayList<>();
+    }
+
+    default List<Work> getWorks(TechnicianDto technicianDto) {
+        if (technicianDto.getWorks() != null) {
+            return technicianDto.getWorks().stream()
+                    .map(workId -> new Work(workId)
+                    ).toList();
         }
         return new ArrayList<>();
     }
