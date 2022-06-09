@@ -2,9 +2,11 @@ package com.poei.spring.tt.tpTTSpring.service.impl;
 
 import com.poei.spring.tt.tpTTSpring.model.User;
 import com.poei.spring.tt.tpTTSpring.service.UserService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UserServiceImpl implements UserService {
     @Override
     public List<User> getAll() {
