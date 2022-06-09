@@ -1,10 +1,8 @@
 package com.poei.spring.tt.tpTTSpring.api.v1;
 
-import com.poei.spring.tt.tpTTSpring.api.dto.AddressDto;
 import com.poei.spring.tt.tpTTSpring.api.dto.TechnicianDto;
 import com.poei.spring.tt.tpTTSpring.exception.UnknownRessourceException;
 import com.poei.spring.tt.tpTTSpring.mapper.TechnicianMapper;
-import com.poei.spring.tt.tpTTSpring.model.Technician;
 import com.poei.spring.tt.tpTTSpring.service.TechnicianService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.HttpStatus;

@@ -37,26 +37,6 @@ public interface ManagerMapper {
         return new ArrayList<>();
     }
 
-    /*default List<TechnicianDto> getTechnicians(Manager manager) {
-        List<TechnicianDto> technicians = new ArrayList<>();
-        if(manager.getTechnicians() != null) {
-            technicians = manager.getTechnicians().stream()
-                    .map(technician -> new TechnicianDto(
-                            technician.getId(),
-                            technician.getLastname(),
-                            technician.getFirstname(),
-                            technician.getAge(),
-                            technician.getManager(),
-                            technician.getAddress(),
-                            technician.getWorks().stream().map(w -> w.getId()).toList(),
-                            technician.getVehicule()
-
-                    ))
-                    .toList();
-        }
-        return technicians;
-    }*/
-
     @Mapping(target = "technicians", expression = "java(getTechnicians(managerDto))")
     Manager mapToModel(ManagerDto managerDto);
 }

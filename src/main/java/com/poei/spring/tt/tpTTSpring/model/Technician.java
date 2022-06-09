@@ -34,13 +34,13 @@ public class Technician {
     private Manager manager;
 
     @OneToOne
-    @JoinColumn(name = "adresses_id", referencedColumnName = "id")
+    @JoinColumn(name = "adresse_id", referencedColumnName = "id")
     private Address address;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
             name = "technicianWork",
-            joinColumns = {@JoinColumn(name = "technician_id")},
+            joinColumns = {@JoinColumn(name = "techinician_id")},
             inverseJoinColumns = {@JoinColumn(name = "work_id")}
     )
     private List<Work> works;
