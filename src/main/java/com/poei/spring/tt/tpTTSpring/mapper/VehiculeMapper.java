@@ -11,10 +11,8 @@ import org.springframework.stereotype.Component;
 public interface VehiculeMapper {
 
     @Mapping(source = "technician.id", target = "technicianId")
-    @Mapping(source = "yearconstruction", target = "year")
     VehiculeDto mapToDto(Vehicule vehicule);
 
     @Mapping(source = "technicianId", target = "technician.id")
-    @Mapping(source = "year", target = "yearconstruction")
     Vehicule mapToModel(VehiculeDto vehiculeDto);
 }
