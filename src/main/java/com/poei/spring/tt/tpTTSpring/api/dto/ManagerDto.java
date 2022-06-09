@@ -19,5 +19,5 @@ public class ManagerDto {
     private String firstname;
     private String phonenumber;
     private String mobilenumber;
-    private List<Technician> technicians;
+    private List<Integer> technicians;
 }
