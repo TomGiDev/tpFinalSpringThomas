@@ -1,6 +1,5 @@
 package com.poei.spring.tt.tpTTSpring.api.v1;
 
-import com.poei.spring.tt.tpTTSpring.api.dto.ManagerDto;
 import com.poei.spring.tt.tpTTSpring.api.dto.VehiculeDto;
 import com.poei.spring.tt.tpTTSpring.exception.NotAllowedToDeleteException;
 import com.poei.spring.tt.tpTTSpring.exception.UnknownRessourceException;

@@ -19,7 +19,7 @@ public class Address {
     private Integer id;
 
     @Column(length = 100)
-    private Integer streenumber;
+    private Integer streetnumber;
 
     @Column(length = 255)
     private String road;

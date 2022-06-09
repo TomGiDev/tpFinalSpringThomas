@@ -1,7 +1,7 @@
 package com.poei.spring.tt.tpTTSpring.api.v1;
 
 import com.poei.spring.tt.tpTTSpring.api.dto.AddressDto;
-import com.poei.spring.tt.tpTTSpring.exception.UnknownResourceException;
+import com.poei.spring.tt.tpTTSpring.exception.UnknownRessourceException;
 import com.poei.spring.tt.tpTTSpring.mapper.AddressMapper;
 import com.poei.spring.tt.tpTTSpring.service.AddressService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -41,7 +41,7 @@ public class AddressApi {
     public ResponseEntity<AddressDto> getUserById(@PathVariable Integer id) {
         try {
             return ResponseEntity.ok(addressMapper.mapToDto(addressService.getById(id)));
-        } catch (UnknownResourceException ure) {
+        } catch (UnknownRessourceException ure) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, ure.getMessage());
         }
     }
@@ -60,7 +60,7 @@ public class AddressApi {
         try {
             addressService.deleteAddress(id);
             return ResponseEntity.noContent().build();
-        } catch (UnknownResourceException ure) {
+        } catch (UnknownRessourceException ure) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, ure.getMessage());
         }
     }
@@ -72,7 +72,7 @@ public class AddressApi {
             addressDto.setId(id);
             AddressDto updatedAddress = addressMapper.mapToDto(addressService.updateAddress(addressMapper.mapToModel(addressDto)));
             return ResponseEntity.ok(updatedAddress);
-        } catch (UnknownResourceException ure) {
+        } catch (UnknownRessourceException ure) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, ure.getMessage());
         }
     }

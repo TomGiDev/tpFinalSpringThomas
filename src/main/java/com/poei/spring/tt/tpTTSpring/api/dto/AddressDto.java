@@ -13,7 +13,7 @@ import lombok.Setter;
 public class AddressDto {
 
     private Integer id;
-    private Integer streenumber;
+    private Integer streetnumber;
     private String road;
     private String city;
     private Integer technicianId;
