@@ -1,7 +1,6 @@
 package com.poei.spring.tt.tpTTSpring.mapper;
 
 import com.poei.spring.tt.tpTTSpring.api.dto.TechnicianDto;
-import com.poei.spring.tt.tpTTSpring.api.dto.WorkDto;
 import com.poei.spring.tt.tpTTSpring.model.Technician;
 import com.poei.spring.tt.tpTTSpring.model.Work;
 import org.mapstruct.Mapper;

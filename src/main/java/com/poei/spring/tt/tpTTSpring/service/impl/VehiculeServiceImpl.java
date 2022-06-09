@@ -1,7 +1,7 @@
 package com.poei.spring.tt.tpTTSpring.service.impl;
 
 import com.poei.spring.tt.tpTTSpring.exception.NotAllowedToDeleteException;
-import com.poei.spring.tt.tpTTSpring.exception.UnknownResourceException;
+import com.poei.spring.tt.tpTTSpring.exception.UnknownRessourceException;
 import com.poei.spring.tt.tpTTSpring.model.Vehicule;
 import com.poei.spring.tt.tpTTSpring.repository.VehiculeRepository;
 import com.poei.spring.tt.tpTTSpring.service.VehiculeService;
@@ -22,7 +22,7 @@ public class VehiculeServiceImpl implements VehiculeService {
 
     @Override
     public Vehicule getById(Integer id) {
-        return vehiculeRepository.findById(id).orElseThrow(() -> new UnknownResourceException("No vehicule was found for this ID"));
+        return vehiculeRepository.findById(id).orElseThrow(() -> new UnknownRessourceException("No vehicule was found for this ID"));
     }
 
     @Override

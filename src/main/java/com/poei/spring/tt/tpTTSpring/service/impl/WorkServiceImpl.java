@@ -1,7 +1,7 @@
 package com.poei.spring.tt.tpTTSpring.service.impl;
 
 import com.poei.spring.tt.tpTTSpring.exception.NotAllowedToDeleteException;
-import com.poei.spring.tt.tpTTSpring.exception.UnknownResourceException;
+import com.poei.spring.tt.tpTTSpring.exception.UnknownRessourceException;
 import com.poei.spring.tt.tpTTSpring.model.Work;
 import com.poei.spring.tt.tpTTSpring.repository.WorkRepository;
 import com.poei.spring.tt.tpTTSpring.service.WorkService;
@@ -28,7 +28,7 @@ public class WorkServiceImpl implements WorkService {
     @Override
     public Work getById(Integer id) {
         return this.workRepository.findById(id)
-                .orElseThrow(() -> new UnknownResourceException("No work found for this workname"));
+                .orElseThrow(() -> new UnknownRessourceException("No work found for this workname"));
     }
 
     @Override
