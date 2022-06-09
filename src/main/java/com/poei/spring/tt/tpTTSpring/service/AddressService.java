@@ -11,7 +11,7 @@ public interface AddressService {
 
     Address createAddress(Address address);
 
-    void deleteAddress(Address address);
+    void deleteAddress(Integer id);
 
     Address updateAddress(Address address);
 
