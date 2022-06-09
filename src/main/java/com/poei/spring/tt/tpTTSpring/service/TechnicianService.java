@@ -11,7 +11,7 @@ public interface TechnicianService {
 
     Technician createTechnician(Technician technician);
 
-    void deleteTechnician(Technician technician);
+    void deleteTechnician(Integer id);
 
     Technician updateTechnician(Technician technician);
 }

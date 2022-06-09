@@ -1,6 +1,7 @@
 package com.poei.spring.tt.tpTTSpring.repository;
 
-import org.apache.catalina.Manager;
+
+import com.poei.spring.tt.tpTTSpring.model.Manager;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -28,6 +28,6 @@ public class Address {
     private String city;
 
     @OneToOne(mappedBy = "address")
-    private Technician technicians;
+    private Technician technician;
 
 }

@@ -12,7 +12,7 @@ public interface WorkService {
 
     Work createWork(Work work);
 
-    void deleteWork(Work work);
+    void deleteWork(Integer id);
 
     Work updateWork(Work work);
 }
