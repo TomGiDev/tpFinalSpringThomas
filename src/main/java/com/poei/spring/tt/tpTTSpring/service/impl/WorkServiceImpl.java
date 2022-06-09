@@ -1,7 +1,7 @@
 package com.poei.spring.tt.tpTTSpring.service.impl;
 
 import com.poei.spring.tt.tpTTSpring.exception.NotAllowedToDeleteException;
-import com.poei.spring.tt.tpTTSpring.exception.UnknownResourceException;
+import com.poei.spring.tt.tpTTSpring.exception.UnknownRessourceException;
 import com.poei.spring.tt.tpTTSpring.model.Work;
 import com.poei.spring.tt.tpTTSpring.repository.WorkRepository;
 import com.poei.spring.tt.tpTTSpring.service.WorkService;
@@ -9,9 +9,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class WorkServiceImpl implements WorkService {
     Logger log = LoggerFactory.getLogger(WorkServiceImpl.class);
 
@@ -26,7 +28,7 @@ public class WorkServiceImpl implements WorkService {
     @Override
     public Work getById(Integer id) {
         return this.workRepository.findById(id)
-                .orElseThrow(() -> new UnknownResourceException("No work found for this workname"));
+                .orElseThrow(() -> new UnknownRessourceException("No work found for this workname"));
     }
 
     @Override

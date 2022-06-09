@@ -1,7 +1,7 @@
 package com.poei.spring.tt.tpTTSpring.service.impl;
 
 import com.poei.spring.tt.tpTTSpring.exception.NotAllowedToDeleteException;
-import com.poei.spring.tt.tpTTSpring.exception.UnknownResourceException;
+import com.poei.spring.tt.tpTTSpring.exception.UnknownRessourceException;
 import com.poei.spring.tt.tpTTSpring.model.Address;
 import com.poei.spring.tt.tpTTSpring.repository.AddressRepository;
 import com.poei.spring.tt.tpTTSpring.service.AddressService;
@@ -29,7 +29,7 @@ public class AddressServiceImpl implements AddressService {
     @Override
     public Address getById(Integer id) {
         return this.addressRepository.findById(id)
-                .orElseThrow(() -> new UnknownResourceException("No address found for this city"));
+                .orElseThrow(() -> new UnknownRessourceException("No address found for this city"));
     }
 
     @Override

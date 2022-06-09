@@ -2,7 +2,7 @@ package com.poei.spring.tt.tpTTSpring.service.impl;
 
 
 import com.poei.spring.tt.tpTTSpring.exception.NotAllowedToDeleteException;
-import com.poei.spring.tt.tpTTSpring.exception.UnknownResourceException;
+import com.poei.spring.tt.tpTTSpring.exception.UnknownRessourceException;
 import com.poei.spring.tt.tpTTSpring.model.Manager;
 import com.poei.spring.tt.tpTTSpring.repository.ManagerRepository;
 import com.poei.spring.tt.tpTTSpring.service.ManagerService;
@@ -25,7 +25,7 @@ public class ManagerServiceImpl implements ManagerService {
 
     @Override
     public Manager getById(Integer id) {
-        return this.managerRepository.findById(id).orElseThrow(() -> new UnknownResourceException("No manager found for this ID"));
+        return this.managerRepository.findById(id).orElseThrow(() -> new UnknownRessourceException("No manager found for this ID"));
     }
 
     @Override

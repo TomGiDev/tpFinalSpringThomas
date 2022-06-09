@@ -1,7 +1,7 @@
 package com.poei.spring.tt.tpTTSpring.service.impl;
 
 import com.poei.spring.tt.tpTTSpring.exception.NotAllowedToDeleteException;
-import com.poei.spring.tt.tpTTSpring.exception.UnknownResourceException;
+import com.poei.spring.tt.tpTTSpring.exception.UnknownRessourceException;
 import com.poei.spring.tt.tpTTSpring.model.Technician;
 import com.poei.spring.tt.tpTTSpring.repository.TechnicianRepository;
 import com.poei.spring.tt.tpTTSpring.service.TechnicianService;
@@ -9,9 +9,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TechnicianServiceImpl implements TechnicianService {
 
     Logger log = LoggerFactory.getLogger(TechnicianServiceImpl.class);
@@ -27,7 +29,7 @@ public class TechnicianServiceImpl implements TechnicianService {
     @Override
     public Technician getById(Integer id) {
         return this.technicianRepository.findById(id)
-                .orElseThrow(() -> new UnknownResourceException("No technician found for this city"));
+                .orElseThrow(() -> new UnknownRessourceException("No technician found for this city"));
     }
 
     @Override

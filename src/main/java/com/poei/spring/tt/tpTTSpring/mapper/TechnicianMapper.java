@@ -1,7 +1,6 @@
 package com.poei.spring.tt.tpTTSpring.mapper;
 
 import com.poei.spring.tt.tpTTSpring.api.dto.TechnicianDto;
-import com.poei.spring.tt.tpTTSpring.api.dto.WorkDto;
 import com.poei.spring.tt.tpTTSpring.model.Technician;
 import com.poei.spring.tt.tpTTSpring.model.Work;
 import org.mapstruct.Mapper;
@@ -17,10 +16,10 @@ import java.util.List;
 public interface TechnicianMapper {
 
     @Mapping(target = "works", expression = "java(getWorksId(technician))")
-    TechnicianDto mapTechnicianToTechnicianDto(Technician technician);
+    TechnicianDto mapToDto(Technician technician);
 
     @Mapping(target = "works", expression = "java(getWorks(technicianDto))")
-    Technician mapTechnicianDtoToTechnician(TechnicianDto technicianDto);
+    Technician mapToModel(TechnicianDto technicianDto);
 
     default List<Integer> getWorksId(Technician technician) {
         if (technician.getWorks() != null) {
