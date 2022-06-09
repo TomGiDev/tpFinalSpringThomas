@@ -50,7 +50,7 @@ public class AddressApi {
     @Operation(summary = "Create an address")
     public ResponseEntity<AddressDto> createAddress(@RequestBody AddressDto addressDto) {
         AddressDto addressCreated = addressMapper.mapToDto(addressService.createAddress(addressMapper.mapToModel(addressDto)));
-        return ResponseEntity.created(URI.create("/v1/addresses/" + addressCreated.getId()))
+        return ResponseEntity.created(URI.create("/v1/address/" + addressCreated.getId()))
                 .body(addressCreated);
     }
 
