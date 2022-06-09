@@ -1,10 +1,8 @@
 package com.poei.spring.tt.tpTTSpring.api.v1;
 
-import com.poei.spring.tt.tpTTSpring.api.dto.AddressDto;
 import com.poei.spring.tt.tpTTSpring.api.dto.TechnicianDto;
-import com.poei.spring.tt.tpTTSpring.exception.UnknownResourceException;
+import com.poei.spring.tt.tpTTSpring.exception.UnknownRessourceException;
 import com.poei.spring.tt.tpTTSpring.mapper.TechnicianMapper;
-import com.poei.spring.tt.tpTTSpring.model.Technician;
 import com.poei.spring.tt.tpTTSpring.service.TechnicianService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.HttpStatus;
@@ -43,7 +41,7 @@ public class TechnicianApi {
     public ResponseEntity<TechnicianDto> getUserById(@PathVariable Integer id) {
         try {
             return ResponseEntity.ok(technicianMapper.mapToDto(technicianService.getById(id)));
-        } catch (UnknownResourceException ure) {
+        } catch (UnknownRessourceException ure) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, ure.getMessage());
         }
     }
@@ -62,7 +60,7 @@ public class TechnicianApi {
         try {
             technicianService.deleteTechnician(id);
             return ResponseEntity.noContent().build();
-        } catch (UnknownResourceException ure) {
+        } catch (UnknownRessourceException ure) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, ure.getMessage());
         }
     }
@@ -74,7 +72,7 @@ public class TechnicianApi {
             technicianDto.setId(id);
             TechnicianDto updatedTechnician = technicianMapper.mapToDto(technicianService.updateTechnician(technicianMapper.mapToModel(technicianDto)));
             return ResponseEntity.ok(updatedTechnician);
-        } catch (UnknownResourceException ure) {
+        } catch (UnknownRessourceException ure) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, ure.getMessage());
         }
     }

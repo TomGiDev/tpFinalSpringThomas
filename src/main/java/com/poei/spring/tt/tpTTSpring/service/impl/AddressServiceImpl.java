@@ -53,7 +53,7 @@ public class AddressServiceImpl implements AddressService {
     public Address updateAddress(Address address) {
         log.debug("Attempting to update address {}", address.getId());
         Address existingAddress = this.getById(address.getId());
-        existingAddress.setStreenumber(address.getStreenumber());
+        existingAddress.setStreetnumber(address.getStreetnumber());
         existingAddress.setRoad(address.getRoad());
         existingAddress.setCity(address.getCity());
         return this.addressRepository.save(existingAddress);
