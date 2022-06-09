@@ -33,8 +33,8 @@ public interface TechnicianMapper {
     default List<Work> getWorks(TechnicianDto technicianDto) {
         if (technicianDto.getWorks() != null) {
             return technicianDto.getWorks().stream()
-                    .map(workId -> new Work(workId)
-                    ).toList();
+                    .map(Work::new)
+                    .toList();
         }
         return new ArrayList<>();
     }

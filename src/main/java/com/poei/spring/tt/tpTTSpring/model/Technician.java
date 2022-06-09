@@ -48,4 +48,6 @@ public class Technician {
     @OneToOne
     @JoinColumn(name="vehicule_id", referencedColumnName = "id")
     private Vehicule vehicule;
+
+    public Technician(Integer technicianId) {this.id = technicianId;}
 }
