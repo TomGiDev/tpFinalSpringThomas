@@ -15,5 +15,5 @@ public interface AddressMapper {
     AddressDto mapToDto(Address address);
 
     @Mapping(source = "technicianId", target = "technician.id")
-    Address matToModel(AddressDto addressDto);
+    Address mapToModel(AddressDto addressDto);
 }

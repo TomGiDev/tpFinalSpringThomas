@@ -17,10 +17,10 @@ import java.util.List;
 public interface TechnicianMapper {
 
     @Mapping(target = "works", expression = "java(getWorksId(technician))")
-    TechnicianDto mapTechnicianToTechnicianDto(Technician technician);
+    TechnicianDto mapToDto(Technician technician);
 
     @Mapping(target = "works", expression = "java(getWorks(technicianDto))")
-    Technician mapTechnicianDtoToTechnician(TechnicianDto technicianDto);
+    Technician mapToModel(TechnicianDto technicianDto);
 
     default List<Integer> getWorksId(Technician technician) {
         if (technician.getWorks() != null) {
