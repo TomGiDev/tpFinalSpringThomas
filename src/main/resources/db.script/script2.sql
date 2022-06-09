@@ -1,9 +1,3 @@
-DROP TABLE IF EXISTS technicians;
-DROP TABLE IF EXISTS managers;
-DROP TABLE IF EXISTS adresses;
-DROP TABLE IF EXISTS works;
-DROP TABLE IF EXISTS vehicules;
-
 CREATE TABLE adresses
 (
     id     SERIAL PRIMARY KEY NOT NULL,
@@ -38,8 +32,8 @@ CREATE TABLE vehicules (
                            plate VARCHAR(7),
                            brand VARCHAR(200),
                            yearConstruction VARCHAR(4),
-                           techinician_id INT,
-                           FOREIGN KEY (techinician_id) REFERENCES technicians(id)
+                           technician_id INT,
+                           FOREIGN KEY (technician_id) REFERENCES technicians(id)
 );
 
 CREATE TABLE works (
@@ -77,13 +71,13 @@ VALUES ('Trouper', '04', '66', 3, 4);
 INSERT INTO technicians (firstname, lastname, age, manager_id, adresse_id)
 VALUES ('Trop peur', '05', '23', 1, 5);
 
-INSERT INTO vehicules (plate, brand, yearConstruction, techinician_id)
+INSERT INTO vehicules (plate, brand, yearConstruction, technician_id)
 VALUES ('66TYU56', 'Opel', '1923', 1);
-INSERT INTO vehicules (plate, brand, yearConstruction, techinician_id)
+INSERT INTO vehicules (plate, brand, yearConstruction, technician_id)
 VALUES ('66TYU11', 'BMW', '1234', 2);
-INSERT INTO vehicules (plate, brand, yearConstruction, techinician_id)
+INSERT INTO vehicules (plate, brand, yearConstruction, technician_id)
 VALUES ('44TYU56', 'RENAULT', '4231', 3);
-INSERT INTO vehicules (plate, brand, yearConstruction, techinician_id)
+INSERT INTO vehicules (plate, brand, yearConstruction, technician_id)
 VALUES ('55TUU56', 'DACIA', '1111', 4);
 
 INSERT INTO works (workName, workPrice)

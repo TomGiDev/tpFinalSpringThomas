@@ -40,7 +40,7 @@ public class Technician {
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
             name = "technicianWork",
-            joinColumns = {@JoinColumn(name = "techinician_id")},
+            joinColumns = {@JoinColumn(name = "technician_id")},
             inverseJoinColumns = {@JoinColumn(name = "work_id")}
     )
     private List<Work> works;
