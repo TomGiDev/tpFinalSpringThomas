@@ -50,4 +50,7 @@ public class Technician {
     private Vehicule vehicule;
 
     public Technician(Integer technicianId) {this.id = technicianId;}
+
+    public Technician(Technician technician) {
+    }
 }

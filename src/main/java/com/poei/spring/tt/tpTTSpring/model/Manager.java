@@ -33,4 +33,8 @@ public class Manager {
 
     @OneToMany(mappedBy = "manager")
     private List<Technician> technicians;
+
+    public Manager(List<Technician> technicians) {
+        this.technicians = technicians;
+    }
 }
