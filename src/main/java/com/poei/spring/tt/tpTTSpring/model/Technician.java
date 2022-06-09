@@ -34,7 +34,7 @@ public class Technician {
     private Manager manager;
 
     @OneToOne
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    @JoinColumn(name = "adresses_id", referencedColumnName = "id")
     private Address address;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
