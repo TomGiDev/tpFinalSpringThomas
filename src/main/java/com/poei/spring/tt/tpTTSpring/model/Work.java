@@ -20,8 +20,10 @@ public class Work {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(length = 255)
     private String workname;
 
+    @Column(length = 255)
     private String workprice;
 
     @ManyToMany(mappedBy = "works")
