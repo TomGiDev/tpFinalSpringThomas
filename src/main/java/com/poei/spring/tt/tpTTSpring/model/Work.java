@@ -28,4 +28,8 @@ public class Work {
 
     @ManyToMany(mappedBy = "works")
     private List<Technician> technicians;
+
+    public Work(Integer workId) {
+        this.id = workId;
+    }
 }
